@@ -47,6 +47,7 @@ int main ( void )
     //Initialite LCD-Driver ST7735S
     st7735s_init();
     fill_display(COLOR_WHITE);
+    fill_display(COLOR_GREEN);
     delay_ms(1000);
     
     
