@@ -1,3 +1,4 @@
 # Ignore object files
 build/
+# Ignore debug files
 /Code/MPLABX/dist/default/debug
