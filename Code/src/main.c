@@ -63,14 +63,7 @@ int main ( void )
         SYS_Tasks ( );
         
         //ER-TFT-144-1 demo
-        ERTFT144_demo();
-        
-      
-        
-        
-      
-        
-             
+        ERTFT144_demo();              
     }
 
     /* Execution should not come here during normal operation */
