@@ -53,17 +53,19 @@ int main ( void )
     //TCC0_Compare24bitMatchSet(TCC0_CHANNEL0, 51);
     //TCC0_CompareStart();
     
+    //ER-TFT-144-1 demo
+    ERTFT144_demo();    
     
     //shut display down
-    //st7735s_power_off();
+    st7735s_power_off();
     
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
         
-        //ER-TFT-144-1 demo
-        ERTFT144_demo();              
+        
+                  
     }
 
     /* Execution should not come here during normal operation */
