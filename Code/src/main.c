@@ -55,7 +55,7 @@ int main ( void )
     
     
     //shut display down
-    st7735s_power_off();
+    //st7735s_power_off();
     
     while ( true )
     {

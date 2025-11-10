@@ -142,8 +142,8 @@ void SYS_Initialize ( void* data )
 
     NVMCTRL_Initialize( );
 
-
     SERCOM0_SPI_Initialize();
+
 
     TCC0_CompareInitialize();
 
