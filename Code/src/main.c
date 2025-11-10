@@ -46,15 +46,11 @@ int main ( void )
   
     //Initialite LCD-Driver ST7735S
     st7735s_init();
-    fill_display(COLOR_BLUE);
+    fill_display(COLOR_WHITE);
     delay_ms(1000);
-    
-    
+     
     //TCC0_Compare24bitMatchSet(TCC0_CHANNEL0, 51);
-    //TCC0_CompareStart();
-    
-    //ER-TFT-144-1 demo
-    //ERTFT144_demo();    
+    //TCC0_CompareStart();   
     
     //shut display down
     st7735s_power_off();
@@ -64,6 +60,8 @@ int main ( void )
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
         
+        //ER-TFT-144-1 demo
+        //ERTFT144_demo(); 
         
                   
     }

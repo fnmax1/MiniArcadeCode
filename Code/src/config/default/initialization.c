@@ -142,10 +142,10 @@ void SYS_Initialize ( void* data )
 
     NVMCTRL_Initialize( );
 
+    TCC0_CompareInitialize();
+
     SERCOM0_SPI_Initialize();
 
-
-    TCC0_CompareInitialize();
 
     TC3_TimerInitialize();
 

@@ -32,10 +32,10 @@ void st7735s_init(void)
     BLA_Set();
     //hardware reset
     st7735s_hardware_reset();
-    //software reset
+    //software reset                    0x01
     st7735s_send_command(SWRESET);
     delay_ms(120);
-    //sleep in mode -> sleep out mode
+    //sleep in mode -> sleep out mode   0x11
     st7735s_send_command(SLPOUT);
     delay_ms(120);
     //select display color coding -> 16bit/pixel

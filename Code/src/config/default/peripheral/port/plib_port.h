@@ -75,13 +75,13 @@
 #define SPI4W_PIN                  PORT_PIN_PA02
 
 /*** Macros for RESET pin ***/
-#define RESET_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 3U))
-#define RESET_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 3U))
-#define RESET_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 3U))
-#define RESET_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 3U))
-#define RESET_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 3U))
-#define RESET_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 3U)) & 0x01U)
-#define RESET_PIN                  PORT_PIN_PA03
+#define RESET_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 4U))
+#define RESET_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 4U))
+#define RESET_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 4U))
+#define RESET_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 4U))
+#define RESET_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 4U))
+#define RESET_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 4U)) & 0x01U)
+#define RESET_PIN                  PORT_PIN_PB04
 
 /*** Macros for DC pin ***/
 #define DC_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 5U))

@@ -72,11 +72,11 @@ build/default/debug/_ext/1360937237/st7735s.o: ../src/st7735s.c \
  ../src/config/default/device_cache.h ../src/config/default/device.h \
  ../src/config/default/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
+ ../src/config/default/peripheral/tcc/plib_tcc0.h \
+ ../src/config/default/peripheral/tcc/plib_tcc_common.h \
  ../src/config/default/peripheral/sercom/spi_master/plib_sercom0_spi_master.h \
  ../src/config/default/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h \
  ../src/config/default/peripheral/evsys/plib_evsys.h \
- ../src/config/default/peripheral/tcc/plib_tcc0.h \
- ../src/config/default/peripheral/tcc/plib_tcc_common.h \
  ../src/config/default/peripheral/port/plib_port.h \
  ../src/config/default/peripheral/clock/plib_clock.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
@@ -235,15 +235,15 @@ build/default/debug/_ext/1360937237/st7735s.o: ../src/st7735s.c \
 
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
 
+../src/config/default/peripheral/tcc/plib_tcc0.h:
+
+../src/config/default/peripheral/tcc/plib_tcc_common.h:
+
 ../src/config/default/peripheral/sercom/spi_master/plib_sercom0_spi_master.h:
 
 ../src/config/default/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h:
 
 ../src/config/default/peripheral/evsys/plib_evsys.h:
-
-../src/config/default/peripheral/tcc/plib_tcc0.h:
-
-../src/config/default/peripheral/tcc/plib_tcc_common.h:
 
 ../src/config/default/peripheral/port/plib_port.h:
 

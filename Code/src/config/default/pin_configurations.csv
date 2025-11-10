@@ -2,8 +2,8 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 1,PA00,,Available,,,,,,NORMAL
 2,PA01,,Available,,,,,,NORMAL
 3,PA02,SPI4W,GPIO,Digital,Out,High,,,NORMAL
-4,PA03,RESET,GPIO,Digital,Out,High,,,NORMAL
-5,PB04,,Available,,,,,,NORMAL
+4,PA03,,Available,,,,,,NORMAL
+5,PB04,RESET,GPIO,Digital,Out,High,,,NORMAL
 6,PB05,DC,GPIO,Digital,Out,Low,,,NORMAL
 9,PB06,,Available,,,,,,NORMAL
 10,PB07,,Available,,,,,,NORMAL
