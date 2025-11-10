@@ -46,7 +46,7 @@ int main ( void )
   
     //Initialite LCD-Driver ST7735S
     st7735s_init();
-    fill_display(COLOR_WHITE);
+    fill_display(COLOR_BLUE);
     delay_ms(1000);
     
     
@@ -54,7 +54,7 @@ int main ( void )
     //TCC0_CompareStart();
     
     //ER-TFT-144-1 demo
-    ERTFT144_demo();    
+    //ERTFT144_demo();    
     
     //shut display down
     st7735s_power_off();
