@@ -43,7 +43,7 @@ void st7735s_init(void)
     st7735s_send_data8bit(0x05);
     //memory data acces control
     st7735s_send_command(MADCTL);
-    st7735s_send_data8bit(0x00);
+    st7735s_send_data8bit(0x08);
     //normal mode on
     st7735s_send_command(NORON);
     //display on

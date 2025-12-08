@@ -54,9 +54,9 @@
 //Color Coding RGB 5-6-5 (16 Bit)
 #define COLOR_BLACK 0x0000
 #define COLOR_WHITE 0xFFFF
-#define COLOR_RED   0x001F
+#define COLOR_RED   0xF800
 #define COLOR_GREEN 0x07E0
-#define COLOR_BLUE  0xF800
+#define COLOR_BLUE  0x001F        
 
 //function macros for SPI
 #define Send_Data(data)         SERCOM0_REGS->SPIM.SERCOM_DATA = (data)

@@ -141,6 +141,7 @@
       <itemPath>../src/st7735s.h</itemPath>
       <itemPath>../src/delay.h</itemPath>
       <itemPath>../src/gfx.h</itemPath>
+      <itemPath>../src/symbols.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -205,6 +206,7 @@
       <itemPath>../src/st7735s.c</itemPath>
       <itemPath>../src/delay.c</itemPath>
       <itemPath>../src/gfx.c</itemPath>
+      <itemPath>../src/symbols.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

@@ -27,6 +27,7 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
 #include "st7735s.h"
+#include "symbols.h"
 #include "gfx.h"
 #include "delay.h"
 
@@ -47,13 +48,16 @@ int main ( void )
     //Initialite LCD-Driver ST7735S
     st7735s_init();
     fill_display(COLOR_WHITE);
-    delay_ms(1000);
-     
+    //delay_ms(1000);
+    
+    
+    //draw_line_horizontal(1,40,1,COLOR_RED);
+    draw_bitMap(64, 64, &Pacman_Ghost);
     //TCC0_Compare24bitMatchSet(TCC0_CHANNEL0, 51);
     //TCC0_CompareStart();   
     
     //shut display down
-    st7735s_power_off();
+    //st7735s_power_off();
     
     while ( true )
     {

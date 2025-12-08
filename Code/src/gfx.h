@@ -22,6 +22,7 @@
 
 #include "st7735s.h"
 #include "definitions.h"  
+#include "symbols.h"
 #include <stdint.h>
 
 /**
@@ -177,6 +178,17 @@ void draw_circle(uint8_t CX, uint8_t CY, uint8_t R, uint16_t color);
  */
 void fill_circle(uint8_t CX, uint8_t CY, uint8_t R, uint16_t color);
 
+/**
+ * @desc    Draw a custom bitmap. 
+ *
+ * @param   tImage *bitmap_data_ptr ->  pointer to struct with bitmap data
+ * @param   uint8_t CX              ->  x-cooridnate circle center
+ * @param   uint8_t CY              ->  y-coordinate circle center
+ * @return  void
+ */
+
+void draw_bitMap(uint8_t CX, uint8_t CY, const tImage *bitmap_data_ptr);
+
 /**161
  * @desc    demo of the graphics functions implemented on the ERTFT144
  *
@@ -184,6 +196,7 @@ void fill_circle(uint8_t CX, uint8_t CY, uint8_t R, uint16_t color);
  *
  * @return  void
  */
+
 void ERTFT144_demo(void);
 
 #endif	/* GFX_H */

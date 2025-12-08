@@ -81,7 +81,7 @@ build/default/debug/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
  ../src/config/default/peripheral/clock/plib_clock.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
  ../src/config/default/peripheral/tc/plib_tc3.h \
- ../src/config/default/peripheral/tc/plib_tc_common.h
+ ../src/config/default/peripheral/tc/plib_tc_common.h ../src/symbols.h
 
 ../src/gfx.h:
 
@@ -256,3 +256,5 @@ build/default/debug/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
 ../src/config/default/peripheral/tc/plib_tc3.h:
 
 ../src/config/default/peripheral/tc/plib_tc_common.h:
+
+../src/symbols.h:

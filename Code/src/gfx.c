@@ -212,6 +212,28 @@ void fill_circle(uint8_t CX, uint8_t CY, uint8_t R, uint16_t color)
     }
 }
 
+void draw_bitMap(uint8_t CX, uint8_t CY, const tImage *bitmap_data_ptr)
+{
+    CX = CX + COL_OFFSET;
+    uint8_t XS =  CX    -   (bitmap_data_ptr->width / 2) ;
+    uint8_t XE =  XS    +   (bitmap_data_ptr->width) - 1 ;
+    uint8_t YS = CY     -   (bitmap_data_ptr->height / 2);
+    uint8_t YE = YS     +   (bitmap_data_ptr->height);
+    st7735s_set_window(XS, XE, YS, YE);
+    st7735s_send_command(RAMWR);
+    DC_Set();
+    CS_Clear();
+    for(int a = 0; a < (bitmap_data_ptr->width * bitmap_data_ptr->height); a++)
+    {
+        Send_lower_Byte(bitmap_data_ptr->data[a]);
+        Buisy_Wait();
+        Send_upper_Byte(bitmap_data_ptr->data[a]);
+        Buisy_Wait();
+    }
+    CS_Set();
+}
+
+
 void ERTFT144_demo(void)
 {
     //fill display demo

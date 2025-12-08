@@ -82,7 +82,7 @@ build/default/production/_ext/1360937237/main.o: ../src/main.c \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
  ../src/config/default/peripheral/tc/plib_tc3.h \
  ../src/config/default/peripheral/tc/plib_tc_common.h ../src/st7735s.h \
- ../src/delay.h ../src/gfx.h
+ ../src/delay.h ../src/symbols.h ../src/gfx.h
 
 ../src/config/default/definitions.h:
 
@@ -255,5 +255,7 @@ build/default/production/_ext/1360937237/main.o: ../src/main.c \
 ../src/st7735s.h:
 
 ../src/delay.h:
+
+../src/symbols.h:
 
 ../src/gfx.h:
