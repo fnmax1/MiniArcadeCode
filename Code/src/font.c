@@ -65,92 +65,88 @@ const char_t* fontset_sz_10[3] =
   &char_0x43_sz_10,      //'C'   (0x43)    
 };
 
-void draw_char(uint8_t curr_x_pos, uint8_t curr_y_pos)
+void draw_char(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch, uint16_t bg_color, uint16_t font_color)
 {
-    char_idx = 0;
+    char_idx = *ch - 'A';
     uint8_t char_width = fontset_sz_10[char_idx]->width;
     uint8_t char_height = fontset_sz_10[char_idx]->height;
     uint8_t bit_mask;
-    uint8_t i;
-    st7735s_set_window( curr_x_pos, ( curr_x_pos + (char_width + 1) ), curr_y_pos, ( curr_y_pos + (char_height - 1) ) );
+    st7735s_set_window( curr_x_pos, ( curr_x_pos + (char_width - 1) ), curr_y_pos, ( curr_y_pos + (char_height - 1) ) );
     st7735s_send_command(RAMWR);
     DC_Set();
     CS_Clear();
     for(uint8_t row_idx = 0; row_idx < char_height; row_idx++)
     {
         bit_mask = 0b10000000;
-        i = 0;
         do
         {
             if( ( fontset_sz_10[char_idx]->data[row_idx] ) & bit_mask )
             {
-                Send_lower_Byte(COLOR_WHITE);
+                Send_lower_Byte(bg_color);
                 Buisy_Wait();
-                Send_upper_Byte(COLOR_WHITE);
+                Send_upper_Byte(bg_color);
                 Buisy_Wait();
             }
             else
             {
-                Send_lower_Byte(COLOR_BLACK);
+                Send_lower_Byte(font_color);
                 Buisy_Wait();
-                Send_upper_Byte(COLOR_BLACK);
+                Send_upper_Byte(font_color);
                 Buisy_Wait();                
             }
             bit_mask >>= 1;
-            i++;
         }
-        while(i < 7);
-        row_idx++;
+        while(bit_mask != 1);
     }
     CS_Set();
-    //txt_x_pos += (char_width + 1);
-    //txt_y_pos += (char_height + 1);
+    txt_x_pos += char_width ;
 }
-/*
-void draw_char(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch)
+
+void draw_char_transp(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch, uint16_t font_color)
 {
     char_idx = *ch - 'A';
     uint8_t char_width = fontset_sz_10[char_idx]->width;
     uint8_t char_height = fontset_sz_10[char_idx]->height;
-    uint8_t bit_mask = 0b10000000; 
-    st7735s_set_window( curr_x_pos, (curr_x_pos + char_width) , curr_y_pos, (curr_y_pos + char_height) );
-    uint8_t row_idx = 0;
-    uint8_t i = 0;
-    while(row_idx < char_height)
+    uint8_t bit_mask;
+    uint8_t pxl_y_pos = curr_y_pos;
+    for(uint8_t row_idx = 0; row_idx < char_height; row_idx++)
     {
+        uint8_t pxl_x_pos = curr_x_pos;
+        bit_mask = 0b10000000;
         do
         {
-            
-            if( (fontset_sz_10[char_idx]->data[row_idx]) & bit_mask )
+            if( ( fontset_sz_10[char_idx]->data[row_idx] ) & bit_mask )
             {
-                st7735s_send_color(COLOR_WHITE,1);
+                pxl_x_pos++;
             }
             else
             {
-                st7735s_send_color(COLOR_BLACK,1);
+                draw_pixel(pxl_x_pos, pxl_y_pos, font_color);
+                pxl_x_pos++;
             }
-            bit_mask = bit_mask >> 1;
-            //draw_line_horizontal(1,127,10 + i,COLOR_BLUE);
-            i++;
+            bit_mask >>= 1;
         }
-        while(i < 7);
-        row_idx++;
+        while(bit_mask != 1);
+        pxl_y_pos++;
     }
-    
-    txt_x_pos += (char_width + 1);
-    txt_y_pos += (char_height + 1);
+    txt_x_pos += char_width ;
 }
 
-void draw_string(uint8_t XS, uint8_t YS, const char* text)
+void draw_string(uint8_t XS, uint8_t YS, const char* text, uint16_t bg_color, uint16_t font_color, uint8_t transp_bit)
 {
     txt_x_pos = XS;
     txt_y_pos = YS;
     while(*text)
     {       
-        draw_char(txt_x_pos, txt_y_pos, text);
-        text++;
-        
+        if(transp_bit == 1)
+        {
+            draw_char_transp(txt_x_pos, txt_y_pos, text, font_color);
+        }
+        else if(transp_bit == 0)
+        {
+            draw_char(txt_x_pos, txt_y_pos, text, bg_color, font_color);
+        }
+        text++; 
     }
 }
 
-*/

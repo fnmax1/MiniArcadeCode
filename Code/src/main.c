@@ -51,18 +51,18 @@ int main ( void )
     fill_display(COLOR_BLUE);
     delay_ms(1000);
     
-    //draw_char(60,60);
+    draw_string(60,60,"ABC", COLOR_GREEN, COLOR_RED, 1);
     //fill_circle(64,64,20,COLOR_RED);
     //draw_line(1,60,128,60,COLOR_RED);
-    //draw_line_horizontal(1,128,1,COLOR_RED);
+    //draw_line_horizontal(60,66,59,COLOR_RED);
     //delay_ms(250);
-    //draw_line_vertical(1,128,1,COLOR_RED);
+    //draw_line_vertical(60,72,59,COLOR_GREEN);
     //draw_bitMap(64, 64, &Pacman_Ghost);
     //TCC0_Compare24bitMatchSet(TCC0_CHANNEL0, 51);
     //TCC0_CompareStart();   
     
     //shut display down
-    st7735s_power_off();
+    //st7735s_power_off();
     
     while ( true )
     {

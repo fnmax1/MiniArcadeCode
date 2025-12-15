@@ -82,7 +82,8 @@ build/default/production/_ext/1360937237/font.o: ../src/font.c \
  ../src/config/default/peripheral/clock/plib_clock.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
  ../src/config/default/peripheral/tc/plib_tc3.h \
- ../src/config/default/peripheral/tc/plib_tc_common.h
+ ../src/config/default/peripheral/tc/plib_tc_common.h ../src/gfx.h \
+ ../src/symbols.h
 
 ../src/font.h:
 
@@ -257,3 +258,7 @@ build/default/production/_ext/1360937237/font.o: ../src/font.c \
 ../src/config/default/peripheral/tc/plib_tc3.h:
 
 ../src/config/default/peripheral/tc/plib_tc_common.h:
+
+../src/gfx.h:
+
+../src/symbols.h:
