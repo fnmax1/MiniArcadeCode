@@ -142,6 +142,7 @@
       <itemPath>../src/delay.h</itemPath>
       <itemPath>../src/gfx.h</itemPath>
       <itemPath>../src/symbols.h</itemPath>
+      <itemPath>../src/font.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -207,6 +208,7 @@
       <itemPath>../src/delay.c</itemPath>
       <itemPath>../src/gfx.c</itemPath>
       <itemPath>../src/symbols.c</itemPath>
+      <itemPath>../src/font.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

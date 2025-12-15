@@ -1,5 +1,6 @@
-build/default/production/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
- ../src/st7735s.h ../src/delay.h ../src/config/default/definitions.h \
+build/default/production/_ext/1360937237/font.o: ../src/font.c \
+ ../src/font.h ../src/st7735s.h ../src/delay.h \
+ ../src/config/default/definitions.h \
  ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
  ../src/config/default/device.h \
  ../src/packs/ATSAMD21J18A_DFP/samd21j18a.h \
@@ -81,10 +82,9 @@ build/default/production/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
  ../src/config/default/peripheral/clock/plib_clock.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
  ../src/config/default/peripheral/tc/plib_tc3.h \
- ../src/config/default/peripheral/tc/plib_tc_common.h ../src/symbols.h \
- ../src/font.h
+ ../src/config/default/peripheral/tc/plib_tc_common.h
 
-../src/gfx.h:
+../src/font.h:
 
 ../src/st7735s.h:
 
@@ -257,7 +257,3 @@ build/default/production/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
 ../src/config/default/peripheral/tc/plib_tc3.h:
 
 ../src/config/default/peripheral/tc/plib_tc_common.h:
-
-../src/symbols.h:
-
-../src/font.h:

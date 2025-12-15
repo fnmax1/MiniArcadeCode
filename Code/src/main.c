@@ -30,6 +30,7 @@
 #include "symbols.h"
 #include "gfx.h"
 #include "delay.h"
+#include "font.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -47,17 +48,21 @@ int main ( void )
   
     //Initialite LCD-Driver ST7735S
     st7735s_init();
-    fill_display(COLOR_WHITE);
-    //delay_ms(1000);
+    fill_display(COLOR_BLUE);
+    delay_ms(1000);
     
-    
-    //draw_line_horizontal(1,40,1,COLOR_RED);
-    draw_bitMap(64, 64, &Pacman_Ghost);
+    //draw_char(60,60);
+    //fill_circle(64,64,20,COLOR_RED);
+    //draw_line(1,60,128,60,COLOR_RED);
+    //draw_line_horizontal(1,128,1,COLOR_RED);
+    //delay_ms(250);
+    //draw_line_vertical(1,128,1,COLOR_RED);
+    //draw_bitMap(64, 64, &Pacman_Ghost);
     //TCC0_Compare24bitMatchSet(TCC0_CHANNEL0, 51);
     //TCC0_CompareStart();   
     
     //shut display down
-    //st7735s_power_off();
+    st7735s_power_off();
     
     while ( true )
     {

@@ -38,13 +38,15 @@
  *          Graphics functions can therefore be used normally
  *          with addresses from 1 to 128.
  */
+//ERTFT144 Display Dimensions
 #define ERTFT144_WIDTH		128
 #define ERTFT144_HEIGHT		128
-#define COL_ADR_START       2   
-#define COL_ADR_END         129
+#define COL_ADR_START       1   
+#define COL_ADR_END         128
 #define COL_OFFSET          1             
 #define ROW_ADR_START       1
 #define ROW_ADR_END         128
+#define ROW_OFFSET          2
 #define MEMORY_SIZE_LCD		ERTFT144_WIDTH * ERTFT144_HEIGHT
 
 //Success/Error
@@ -288,23 +290,23 @@ inline void st7735s_send_color(uint16_t color, uint16_t counter)
 inline void st7735s_set_window(uint8_t XS, uint8_t XE, uint8_t YS, uint8_t YE)
 {
     //check if coordinates are out of range
-	if(     XS > XE || XE > COL_ADR_END || 
-            YS > YE	|| YE > ROW_ADR_END     )
+	if(     XS > XE || XE > ERTFT144_WIDTH || 
+            YS > YE	|| YE > ERTFT144_HEIGHT     )
 		{
 			exit(ST7735S_ERROR);
 		}
     //set column address
     st7735s_send_command(CASET);
     //column address start -> XS
-    st7735s_send_data16bit( 0x0000 | XS );
+    st7735s_send_data16bit( 0x0000 | (XS + COL_OFFSET) );
     //column address end -> XE
-    st7735s_send_data16bit( 0x0000 | XE );
+    st7735s_send_data16bit( 0x0000 | (XE + COL_OFFSET) );
     //set row address
     st7735s_send_command(RASET);
     //row address start -> YS
-    st7735s_send_data16bit( 0x0000 | YS );
+    st7735s_send_data16bit( 0x0000 | (YS + ROW_OFFSET) );
     //row address end -> YE
-    st7735s_send_data16bit( 0x0000 | YE );
+    st7735s_send_data16bit( 0x0000 | (YE + ROW_OFFSET) );
 }
 
 #endif	/* ST7735S_H */

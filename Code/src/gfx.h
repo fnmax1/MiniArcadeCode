@@ -23,6 +23,7 @@
 #include "st7735s.h"
 #include "definitions.h"  
 #include "symbols.h"
+#include "font.h"
 #include <stdint.h>
 
 /**
@@ -36,7 +37,6 @@
  */
 inline void draw_pixel(uint8_t X, uint8_t Y, uint16_t color)
 {
-    X = X + COL_OFFSET;
     st7735s_set_window( X, X, Y, Y);
     st7735s_send_color(color, 1);
 }

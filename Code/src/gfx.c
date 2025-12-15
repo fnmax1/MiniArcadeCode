@@ -104,15 +104,12 @@ void draw_line(uint8_t XS, uint8_t YS, uint8_t XE, uint8_t YE, uint16_t color)
 
 void draw_line_horizontal(uint8_t XS, uint8_t XE, uint8_t ROW, uint16_t color)
 {
-    XS = XS + COL_OFFSET;
-    XE = XE + COL_OFFSET;
     st7735s_set_window(XS, XE, ROW, ROW);
     st7735s_send_color(color, (XE - XS) + 1 );
 }
 
 void draw_line_vertical(uint8_t YS, uint8_t YE, uint8_t COL, uint16_t color)
 {
-    COL = COL + COL_OFFSET;
     st7735s_set_window(COL, COL, YS, YE);
     st7735s_send_color(color, (YE - YS) + 1 );
 }
@@ -135,8 +132,6 @@ void fill_rectangle_partial(uint8_t XS, uint8_t XE, uint8_t YS, uint8_t YE, uint
 
 void fill_rectangle(uint8_t XS, uint8_t XE, uint8_t YS, uint8_t YE, uint16_t color)
 {
-    XS = XS + COL_OFFSET;
-    XE = XE + COL_OFFSET;
     st7735s_set_window(XS, XE, YS, YE);
     uint16_t sizeRect = ( (XE - XS) + 1 ) * ( (YE - YS) + 1 );
     st7735s_send_color(color,sizeRect);
@@ -232,7 +227,6 @@ void draw_bitMap(uint8_t CX, uint8_t CY, const tImage *bitmap_data_ptr)
     }
     CS_Set();
 }
-
 
 void ERTFT144_demo(void)
 {
