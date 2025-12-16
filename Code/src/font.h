@@ -23,7 +23,7 @@ typedef struct
     uint8_t height;
 } char_t;
 
-extern const char_t* fontset_sz_10[3];
+extern const char_t* fontset_sz_10[95];
 
 void draw_char(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch, uint16_t bg_color, uint16_t font_color);
 void draw_char_transp(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch, uint16_t font_color);
