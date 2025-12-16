@@ -51,7 +51,7 @@ int main ( void )
     fill_display(COLOR_WHITE);
     delay_ms(1000);
     
-    draw_string(60,60,"Hello", COLOR_WHITE, COLOR_BLACK, 1);
+    draw_string(10,60,"Hello World", COLOR_BLUE, COLOR_BLACK, 1);
     //fill_circle(64,64,20,COLOR_RED);
     //draw_line(1,60,128,60,COLOR_RED);
     //draw_line_horizontal(60,66,59,COLOR_RED);
@@ -62,7 +62,7 @@ int main ( void )
     //TCC0_CompareStart();   
     
     //shut display down
-    st7735s_power_off();
+    //st7735s_power_off();
     
     while ( true )
     {

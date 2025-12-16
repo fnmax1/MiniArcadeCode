@@ -1918,16 +1918,17 @@ void draw_char(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch, uint16_t 
     uint8_t char_width = fontset_sz_10[char_idx]->width;
     uint8_t char_height = fontset_sz_10[char_idx]->height;
     uint8_t bit_mask;
+    uint8_t array_idx = 0;
     st7735s_set_window( curr_x_pos, ( curr_x_pos + (char_width - 1) ), curr_y_pos, ( curr_y_pos + (char_height - 1) ) );
     st7735s_send_command(RAMWR);
     DC_Set();
     CS_Clear();
-    for(uint8_t row_idx = 0; row_idx < char_height; row_idx++)
+    for(uint8_t row_cnt = 0; row_cnt < char_height; row_cnt++)
     {
         bit_mask = 0b10000000;
-        for(uint8_t bit_width = 0; bit_width < char_width; bit_width++ )
+        for(uint8_t bit_cnt = 0; bit_cnt < char_width; bit_cnt++ )
         {
-            if( ( fontset_sz_10[char_idx]->data[row_idx] ) & bit_mask )
+            if( ( fontset_sz_10[char_idx]->data[array_idx] ) & bit_mask )
             {
                 Send_lower_Byte(bg_color);
                 Buisy_Wait();
@@ -1942,8 +1943,13 @@ void draw_char(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch, uint16_t 
                 Buisy_Wait();                
             }
             bit_mask >>= 1;
+            if(char_width > 8 && bit_mask == 0)
+            {
+                bit_mask = 0b10000000;
+                array_idx++;
+            }
         }
-        
+        array_idx++;
     }
     CS_Set();
     txt_x_pos += char_width ;
@@ -1955,14 +1961,16 @@ void draw_char_transp(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch, ui
     uint8_t char_width = fontset_sz_10[char_idx]->width;
     uint8_t char_height = fontset_sz_10[char_idx]->height;
     uint8_t bit_mask;
+    uint8_t array_idx = 0;
+    uint8_t pxl_x_pos;
     uint8_t pxl_y_pos = curr_y_pos;
-    for(uint8_t row_idx = 0; row_idx < char_height; row_idx++)
+    for(uint8_t row_cnt = 0; row_cnt < char_height; row_cnt++)
     {
-        uint8_t pxl_x_pos = curr_x_pos;
+        pxl_x_pos = curr_x_pos;
         bit_mask = 0b10000000;
-        for(uint8_t bit_width = 0; bit_width < char_width; bit_width++ )
+        for(uint8_t bit_cnt = 0; bit_cnt < char_width; bit_cnt++ )
         {
-            if( ( fontset_sz_10[char_idx]->data[row_idx] ) & bit_mask )
+            if( ( fontset_sz_10[char_idx]->data[array_idx] ) & bit_mask )
             {
                 pxl_x_pos++;
             }
@@ -1972,8 +1980,14 @@ void draw_char_transp(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch, ui
                 pxl_x_pos++;
             }
             bit_mask >>= 1;
+            if(char_width > 8 && bit_mask == 0)
+            {
+                bit_mask = 0b10000000;
+                array_idx++;
+            }            
         }
         pxl_y_pos++;
+        array_idx++;
     }
     txt_x_pos += char_width ;
 }
