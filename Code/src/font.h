@@ -29,9 +29,5 @@ void draw_char(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch, uint16_t 
 void draw_char_transp(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch, uint16_t font_color);
 void draw_string(uint8_t XS, uint8_t YS, const char* text, uint16_t bg_color, uint16_t font_color, uint8_t transp_bit);
 
-//void draw_char(uint8_t curr_x_pos, uint8_t curr_y_pos, const char* ch);
-
-//void draw_string(uint8_t XS, uint8_t YS, const char* text);
-
 #endif	/* FONT_H */
 
