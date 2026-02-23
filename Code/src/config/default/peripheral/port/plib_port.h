@@ -65,6 +65,24 @@
 // *****************************************************************************
 // *****************************************************************************
 
+/*** Macros for VDD pin ***/
+#define VDD_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 0U))
+#define VDD_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 0U))
+#define VDD_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 0U))
+#define VDD_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 0U))
+#define VDD_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 0U))
+#define VDD_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 0U)) & 0x01U)
+#define VDD_PIN                  PORT_PIN_PA00
+
+/*** Macros for VDDI pin ***/
+#define VDDI_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 1U))
+#define VDDI_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 1U))
+#define VDDI_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = ((uint32_t)1U << 1U))
+#define VDDI_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = ((uint32_t)1U << 1U))
+#define VDDI_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = ((uint32_t)1U << 1U))
+#define VDDI_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 1U)) & 0x01U)
+#define VDDI_PIN                  PORT_PIN_PA01
+
 /*** Macros for SPI4W pin ***/
 #define SPI4W_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 2U))
 #define SPI4W_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 2U))
@@ -211,24 +229,6 @@
 #define DP_UP_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 17U))
 #define DP_UP_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 17U)) & 0x01U)
 #define DP_UP_PIN                  PORT_PIN_PB17
-
-/*** Macros for VDD pin ***/
-#define VDD_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 0U))
-#define VDD_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 0U))
-#define VDD_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 0U))
-#define VDD_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 0U))
-#define VDD_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 0U))
-#define VDD_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 0U)) & 0x01U)
-#define VDD_PIN                  PORT_PIN_PB00
-
-/*** Macros for VDDI pin ***/
-#define VDDI_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 1U))
-#define VDDI_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 1U))
-#define VDDI_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 1U))
-#define VDDI_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 1U))
-#define VDDI_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 1U))
-#define VDDI_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 1U)) & 0x01U)
-#define VDDI_PIN                  PORT_PIN_PB01
 
 // *****************************************************************************
 /* PORT Group

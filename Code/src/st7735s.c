@@ -30,7 +30,7 @@ void st7735s_init(void)
 	st7735s_power_on();
 	//turn Backlight on
     BLA_Set();
-    //hardware reset
+   //hardware reset
     st7735s_hardware_reset();
     //software reset                    
     st7735s_send_command(SWRESET);

@@ -4202,11 +4202,3 @@ void draw_string(uint8_t XS, uint8_t YS, const char* text, uint16_t bg_color, ui
         text++; 
     }
 }
-
-/*
- test
- * " !\"#$%&'()*+,-./"
-"0123456789:;<=>?"
-"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
-"`abcdefghijklmnopqrstuvwxyz{|}~";
- */

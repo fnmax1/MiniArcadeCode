@@ -51,28 +51,14 @@ int main ( void )
     fill_display(COLOR_WHITE);
     delay_ms(1000);
     
-    draw_string(10,60,"Hello World", COLOR_BLUE, COLOR_BLACK, 1, SIZE_14);
-    //fill_circle(64,64,20,COLOR_RED);
-    //draw_line(1,60,128,60,COLOR_RED);
-    //draw_line_horizontal(60,66,59,COLOR_RED);
-    //delay_ms(250);
-    //draw_line_vertical(60,72,59,COLOR_GREEN);
-    //draw_bitMap(64, 64, &Pacman_Ghost);
-    //TCC0_Compare24bitMatchSet(TCC0_CHANNEL0, 51);
-    //TCC0_CompareStart();   
-    
-    //shut display down
-    //st7735s_power_off();
-    
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
         
         //ER-TFT-144-1 demo
-        //ERTFT144_demo(); 
-        
-                  
+        ERTFT144_demo(); 
+                 
     }
 
     /* Execution should not come here during normal operation */
